@@ -4,6 +4,18 @@ An ADB recovery script that waits for an existing Root My Galaxy bootstrap helpe
 
 **Run [disable-kernelsu-modules.sh](./disable-kernelsu-modules.sh) on your computer.** It is a shell script, not a ZIP module to install through KernelSU Manager.
 
+## Quick start with Git
+
+Install [Git](https://git-scm.com/downloads) and [Android Platform Tools](https://developer.android.com/tools/releases/platform-tools). Then run these commands from Linux, macOS, Git Bash, or WSL:
+
+```sh
+git clone https://github.com/Vishesh-093/KernelSU-Module-Disabler.git
+cd KernelSU-Module-Disabler
+sh disable-kernelsu-modules.sh 240
+```
+
+The script waits for the phone over ADB. Keep the terminal open, authorize USB debugging on the phone if prompted, and start your existing Root My Galaxy bootstrap process while the script is waiting.
+
 ## Why this exists
 
 This script was written following an incompatible-module incident in a temporary-root setup: root access stopped working and the device restarted during the process. The idea is to use a brief working bootstrap-root window to mark modules as disabled before another recovery attempt.
@@ -39,11 +51,11 @@ The helper is not bundled or installed by this project. The script uses existing
 
 ## Usage
 
-Download the script, or clone this repository:
+For later runs, enter the cloned repository and fetch the latest version:
 
 ```sh
-git clone https://github.com/Vishesh-093/KernelSU-Module-Disabler.git
 cd KernelSU-Module-Disabler
+git pull --ff-only
 ```
 
 Check that ADB sees the intended phone:
